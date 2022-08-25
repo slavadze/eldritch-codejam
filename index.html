@@ -5,18 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="script.js"></script>
     <title>Codejam</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="ancients-container">    
-            <div class="ancient-card " style="background-image: url(assets/Ancients/Azathoth.png);"></div>
-            <div class="ancient-card " style="background-image: url(assets/Ancients/Cthulthu.png);"></div>
-            <div class="ancient-card " style="background-image: url(assets/Ancients/IogSothoth.png);"></div>
-            <div class="ancient-card " style="background-image: url(assets/Ancients/ShubNiggurath.png);"></div>
+            <div class="ancient-card " style="background-image: url(assets/Ancients/Azathoth.png);">
+                <input id="radio-1" class="input_field ancient" type="radio" name="anc" value="1" checked>
+            </div>
+            <div class="ancient-card " style="background-image: url(assets/Ancients/Cthulthu.png);">
+                <input id="radio-2" class="input_field ancient" type="radio" name="anc" value="2">
+            </div>
+            <div class="ancient-card " style="background-image: url(assets/Ancients/IogSothoth.png);">
+                <input id="radio-3" class="input_field ancient" type="radio" name="anc" value="3">
+            </div>
+            <div class="ancient-card " style="background-image: url(assets/Ancients/ShubNiggurath.png);">
+                <input id="radio-4" class="input_field ancient" type="radio" name="anc" value="4"></div>
         </div>
-        <div class="difficulty-container"></div>
-        <div class="deck-container"></div>
+        <div class="difficulty-container">
+            <div class="difficulty">Очень легкий
+                <input id="radio-5" class="input_field difficulty" type="radio" name="dif" value="5" checked>
+            </div>
+            <div class="difficulty">Легкий уровень
+                <input id="radio-6" class="input_field difficulty" type="radio" name="dif" value="6">
+            </div>
+            <div class="difficulty">Средний уровень
+                <input id="radio-7" class="input_field difficulty" type="radio" name="dif" value="7">
+            </div>
+            <div class="difficulty">Сложный уровень
+                <input id="radio-8" class="input_field difficulty" type="radio" name="dif" value="8">
+            </div>
+            <div class="difficulty">Очень сложный
+                <input id="radio-9" class="input_field difficulty" type="radio" name="dif" value="9">
+            </div>
+        </div>
+        <div class="deck-container">
+            <span class="shuffle-button">Замешать колоду</span>
+        </div>
     </div>
 </body>
 </html>
