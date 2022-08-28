@@ -1,150 +1,174 @@
-/* Указываем box sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Убираем внутренние отступы */
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
-/* Убираем внешние отступы */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Выставляем основные настройки по-умолчанию для body */
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    background: url("./assets/home.jpg") no-repeat center;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 500px;
+    color: #ffffff;
+    max-width: 1920px;
+    max-height: 1080px;
+  }
+  
+  p {
+    margin: 0;
+  }
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-}
-
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-ul[class],
-ol[class] {
-  list-style: none;
-}
-
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Упрощаем работу с изображениями */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
-  margin-top: 1em;
-}
-
-/* Наследуем шрифты для инпутов и кнопок */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-.wrapper {
-    background-image: url(assets/home.png);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+  
+  .main-container {
     display: flex;
-    gap: 20px;
-    height: 100vh;
     justify-content: space-between;
-    width: 100vw;
-}
-
-.ancients-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
-    min-width: 40%;
-    padding: 20px;
-}
-
-.ancients-container .ancient-card {
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    box-sizing: border-box;
-    cursor: pointer;
-    height: 260px;
-    width: 200px;
-}
-
-input {
-    
-}
-
-input:checked {
-	
-    border-color: #f00;
-}
-
-.difficulty-container {
-    display: flex;
-    flex-direction: column;
     gap: 20px;
-    height: 100vh;
-    justify-content: center;
-}
+  }
 
-.difficulty-container .difficulty.active {
-    background-color: red;
-}
-
-.difficulty-container .difficulty {
-    border: 2px solid purple;
-    box-sizing: border-box;
-    color: purple;
-    cursor: pointer;
-    padding: 5px;
-    text-align: center;
-}
-
-.deck-container {
+  .title {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0 0 20px;
+    font-size: 15px;
+  }
+  
+  .select-old {
+    margin: 10px 0 0 10px;
+    font-size: 15px;
+    border: 13px solid #fff;
+  }
+  
+  .old-card {
+    margin-top: 15px;
+    min-height: 610px;
+    min-width: 470px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .game-mode {
+    display: none;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .mode {
+    border: 2px solid #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  
+  .mode._active {
+    background-color: green;
+  }
+  
+  .game-mode._active {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .game {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     justify-content: center;
-    min-width: 30%;
-}
-
-.deck-container .shuffle-button {
-    background-color: red;
-    border: 2px solid purple;
-    color: purple;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .game-start {
+    border: 2px solid #ffffff;
     cursor: pointer;
-    padding: 5px;
-}
+    padding: 20px 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+  .game-end {
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    padding: 20px 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+  .game-end._active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .stage-name {
+    margin-bottom: 20px;
+  }
+  
+  .stage-container {
+    display: none;
+    align-self: center;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .dots-container {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .dot {
+    padding: 15px;
+    border-radius: 50%;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .brown {
+    background-color: #964b00;
+  }
+  
+  .blue {
+    background-color: #394795;
+  }
+  
+  .stage-container._active {
+    display: flex;
+  }
+  
+  .game-start._active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .game-start:hover {
+    background-color: green;
+  }
+  
+  .card-deck-holder {
+    display: none;
+    height: 418px;
+    margin-top: 127px;
+    min-width: 285px;
+    background: url("./assets/mythicCardBackground.jpg") no-repeat center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  
+  .card-deck-holder._active {
+    display: flex;
+  }
+  
+  .active-card-block {
+    display: none;
+    min-width: 300px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .active-card-block._active {
+    display: flex;
+  }  

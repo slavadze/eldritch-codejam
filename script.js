@@ -1,412 +1,299 @@
-    //blue
-const cardsDataBlue = [
-    {
-      id: 'blue1',
-      cardFace: blueCardsAssets.blue1,
-      difficulty: 'hard',
-      color:'blue'
-    },
-    {
-      id: 'blue2',
-      cardFace: blueCardsAssets.blue2,
-      difficulty: 'hard',
-      color:'blue'
-    },
-    {
-      id: 'blue3',
-      cardFace: blueCardsAssets.blue3,
-      difficulty: 'easy',
-      color:'blue'
-    },
-    {
-      id: 'blue4',
-      cardFace: blueCardsAssets.blue4,
-      difficulty: 'easy',
-      color:'blue'
-    },
-    {
-      id: 'blue5',
-      cardFace: blueCardsAssets.blue5,
-      difficulty: 'easy',
-      color:'blue'
-    },
-    {
-      id: 'blue6',
-      cardFace: blueCardsAssets.blue6,
-      difficulty: 'hard',
-      color:'blue'
-    },
-    {
-      id: 'blue7',
-      cardFace: blueCardsAssets.blue7,
-      difficulty: 'normal',
-      color:'blue'
-    },
-    {
-      id: 'blue8',
-      cardFace: blueCardsAssets.blue8,
-      difficulty: 'hard',
-      color:'blue'
-    },
-    {
-      id: 'blue9',
-      cardFace: blueCardsAssets.blue9,
-      difficulty: 'normal',
-      color:'blue'
-    },
-    {
-      id: 'blue10',
-      cardFace: blueCardsAssets.blue10,
-      difficulty: 'easy',
-      color:'blue'
-    },
-    {
-      id: 'blue11',
-      cardFace: blueCardsAssets.blue11,
-      difficulty: 'normal',
-      color:'blue'
-    },
-    {
-      id: 'blue12',
-      cardFace: blueCardsAssets.blue12,
-      difficulty: 'normal',
-      color:'blue'
-    },
-  ]
+import ancients from "./assets/Ancients/index.js";
+import blueCards from "./assets/MythicCards/blue/index.js";
+import brownCards from "./assets/MythicCards/brown/index.js";
+import greenCards from "./assets/MythicCards/green/index.js";
 
-    //brown
-const cardsDataBrown = [
-    {
-      id: 'brown1',
-      cardFace: brownCardsAssets.brown1,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown2',
-      cardFace: brownCardsAssets.brown2,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown3',
-      cardFace: brownCardsAssets.brown3,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown4',
-      cardFace: brownCardsAssets.brown4,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown5',
-      cardFace: brownCardsAssets.brown5,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown6',
-      cardFace: brownCardsAssets.brown6,
-      difficulty: 'hard',
-      color:'brown'
-    },
-    {
-      id: 'brown7',
-      cardFace: brownCardsAssets.brown7,
-      difficulty: 'hard',
-      color:'brown'
-    },
-    {
-      id: 'brown8',
-      cardFace: brownCardsAssets.brown8,
-      difficulty: 'hard',
-      color:'brown'
-    },
-    {
-      id: 'brown9',
-      cardFace: brownCardsAssets.brown9,
-      difficulty: 'hard',
-      color:'brown'
-    },
-    {
-      id: 'brown10',
-      cardFace: brownCardsAssets.brown10,
-      difficulty: 'hard',
-      color:'brown'
-    },
-    {
-      id: 'brown11',
-      cardFace: brownCardsAssets.brown11,
-      difficulty: 'easy',
-      color:'brown'
-    },
-    {
-      id: 'brown12',
-      cardFace: brownCardsAssets.brown12,
-      difficulty: 'easy',
-      color:'brown'
-    },
-    {
-      id: 'brown13',
-      cardFace: brownCardsAssets.brown13,
-      difficulty: 'easy',
-      color:'brown'
-    },
-    {
-      id: 'brown14',
-      cardFace: brownCardsAssets.brown14,
-      difficulty: 'easy',
-      color:'brown'
-    },
-    {
-      id: 'brown15',
-      cardFace: brownCardsAssets.brown15,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown16',
-      cardFace: brownCardsAssets.brown16,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown17',
-      cardFace: brownCardsAssets.brown17,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown18',
-      cardFace: brownCardsAssets.brown18,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown19',
-      cardFace: brownCardsAssets.brown19,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown20',
-      cardFace: brownCardsAssets.brown20,
-      difficulty: 'normal',
-      color:'brown'
-    },
-    {
-      id: 'brown21',
-      cardFace: brownCardsAssets.brown21,
-      difficulty: 'easy',
-      color:'brown'
-    },
-  ]
+const oldSelectPanel = document.querySelector(".select-old"),
+  gameMods = document.querySelectorAll(".mode"),
+  cardHolder = document.querySelector(".old-card"),
+  gameModeSelect = document.querySelector(".game-mode"),
+  stageContainer = document.querySelector(".stage-container"),
+  cardDeckHolder = document.querySelector(".card-deck-holder"),
+  cardShowing = document.querySelector(".active-card-block"),
+  gameEnd = document.querySelector(".game-end"),
+  gameStart = document.querySelector(".game-start"),
+  stageOneBlock = document.querySelector(".stage-one"),
+  stageTwoBlock = document.querySelector(".stage-two"),
+  stageThreeBlock = document.querySelector(".stage-three");
 
-    //green
-    const cardsDataGreen = [
-        {
-          id: 'green1',
-          cardFace: greenCardsAssets.green1,
-          difficulty: 'easy',
-          color:'green'
-        },
-        {
-          id: 'green2',
-          cardFace: greenCardsAssets.green2,
-          difficulty: 'hard',
-          color:'green'
-        },
-        {
-          id: 'green3',
-          cardFace: greenCardsAssets.green3,
-          difficulty: 'hard',
-          color:'green'
-        },
-        {
-          id: 'green4',
-          cardFace: greenCardsAssets.green4,
-          difficulty: 'hard',
-          color:'green'
-        },
-        {
-          id: 'green5',
-          cardFace: greenCardsAssets.green5,
-          difficulty: 'hard',
-          color:'green'
-        },
-        {
-          id: 'green6',
-          cardFace: greenCardsAssets.green6,
-          difficulty: 'hard',
-          color:'green'
-        },
-        {
-          id: 'green7',
-          cardFace: greenCardsAssets.green7,
-          difficulty: 'normal',
-          color:'green'
-        },
-        {
-          id: 'green8',
-          cardFace: greenCardsAssets.green8,
-          difficulty: 'normal',
-          color:'green'
-        },
-        {
-          id: 'green9',
-          cardFace: greenCardsAssets.green9,
-          difficulty: 'normal',
-          color:'green'
-        },
-        {
-          id: 'green10',
-          cardFace: greenCardsAssets.green10,
-          difficulty: 'normal',
-          color:'green'
-        },
-        {
-          id: 'green11',
-          cardFace: greenCardsAssets.green11,
-          difficulty: 'normal',
-          color:'green'
-        },
-        {
-          id: 'green12',
-          cardFace: greenCardsAssets.green12,
-          difficulty: 'easy',
-          color:'green'
-        },
-        {
-          id: 'green13',
-          cardFace: greenCardsAssets.green13,
-          difficulty: 'normal',
-          color:'green'
-        },
-        {
-          id: 'green14',
-          cardFace: greenCardsAssets.green14,
-          difficulty: 'normal',
-          color:'green'
-        },
-        {
-          id: 'green15',
-          cardFace: greenCardsAssets.green15,
-          difficulty: 'normal',
-          color:'green'
-        },
-        {
-          id: 'green16',
-          cardFace: greenCardsAssets.green16,
-          difficulty: 'easy',
-          color:'green'
-        },
-        {
-          id: 'green17',
-          cardFace: greenCardsAssets.green17,
-          difficulty: 'easy',
-          color:'green'
-        },
-        {
-          id: 'green18',
-          cardFace: greenCardsAssets.green18,
-          difficulty: 'easy',
-          color:'green'
-        },
-      ]
-    
-    //ancients  
-      const ancientsData = [
-        {
-          id: 'azathoth',
-          name: 'azathoth',
-          cardFace: Ancients.azathoth,
-          firstStage: {
-            greenCards: 1,
-            blueCards: 1,
-            brownCards: 2,
-          },
-          secondStage: {
-            greenCards: 2,
-            blueCards: 1,
-            brownCards: 3,
-          },
-          thirdStage: {
-            greenCards: 2,
-            blueCards: 0,
-            brownCards: 4,
-          },
-        },
-        {
-          id: 'cthulhu',
-          name: 'cthulhu',
-          cardFace: Ancients.cthulhu,
-          firstStage: {
-            greenCards: 0,
-            blueCards: 2,
-            brownCards: 2,
-          },
-          secondStage: {
-            greenCards: 1,
-            blueCards: 0,
-            brownCards: 3,
-          },
-          thirdStage: {
-            greenCards: 3,
-            blueCards: 0,
-            brownCards: 4,
-          },
-        },
-        {
-          id: 'iogSothoth',
-          name: 'iogSothoth',
-          cardFace: Ancients.iogSothoth,
-          firstStage: {
-            greenCards: 0,
-            blueCards: 1,
-            brownCards: 2,
-          },
-          secondStage: {
-            greenCards: 2,
-            blueCards: 1,
-            brownCards: 3,
-          },
-          thirdStage: {
-            greenCards: 3,
-            blueCards: 0,
-            brownCards: 4,
-          },
-        },
-        {
-          id: 'shubNiggurath',
-          name: 'shubNiggurath',
-          cardFace: Ancients.shubNiggurath,
-          firstStage: {
-            greenCards: 1,
-            blueCards: 1,
-            brownCards: 2,
-          },
-          secondStage: {
-            greenCards: 3,
-            blueCards: 1,
-            brownCards: 2,
-          },
-          thirdStage: {
-            greenCards: 2,
-            blueCards: 0,
-            brownCards: 4,
-          },
-        },
-      ]
+let gameOnGoing = false,
+  gameMode = "",
+  ancient = "";
 
-
-document.querySelector('.shuffle-button').addEventListener('click', () => {
-    const ancients = document.querySelector('input[name="anc"]:checked').value;
-    const difficulty = document.querySelector('input[name="dif"]:checked').value;
-
-    var deck = [];
-    if (ancients == 1 && difficulty == 7) {
-        
-    }
+oldSelectPanel.addEventListener("change", function () {
+  const old = this.value;
+  ancients.forEach((item) =>
+    item.title === old ? changeOldCard(item) : 0
+  );
 });
+
+const changeOldCard = (item) => {
+  ancient = item;
+  const url = item.src;
+  const img = new Image();
+  img.src = url;
+  img.onload = () => {
+    cardHolder.style.background = `url(${url}) no-repeat`;
+  };
+  gameModeSelect.classList.add("_active");
+  showGameOptions();
+};
+
+gameMods.forEach((element) =>
+  element.addEventListener("click", (e) => {
+    const gameModsArr = Array.from(gameMods),
+      gameOptionSelected = gameModsArr.filter((element) => element === e.target);
+    if (gameOptionSelected) {
+      gameMods.forEach((element) =>
+        element.classList.contains("_active")
+          ? element.classList.remove("_active")
+          : 0
+      );
+      e.target.classList.add("_active");
+      gameMode = e.target.classList[1];
+      gameStart.classList.add("_active");
+    }
+  })
+);
+
+const shuffleCards = (arr) => {
+  const greenCardsValue = arr[0][0] + arr[1][0] + arr[2][0],
+    brownCardsValue = arr[0][1] + arr[1][1] + arr[2][1],
+    blueCardsValue = arr[0][2] + arr[1][2] + arr[2][2],
+    greenCardsArr = [],
+    brownCardsArr = [],
+    blueCardsArr = [];
+
+  const deckWithDificillity = createDecksWithDificility(
+    greenCardsValue,
+    brownCardsValue,
+    blueCardsValue
+  );
+
+  while (greenCardsArr.length < greenCardsValue) {
+    const i = Math.floor(Math.random() * deckWithDificillity[0].length);
+    if (!greenCardsArr.includes(deckWithDificillity[0][i]["src"])) {
+      greenCardsArr.push(deckWithDificillity[0][i]["src"]);
+    }
+  }
+  while (brownCardsArr.length < brownCardsValue) {
+    const i = Math.floor(Math.random() * deckWithDificillity[1].length);
+    if (!brownCardsArr.includes(deckWithDificillity[1][i]["src"])) {
+      brownCardsArr.push(deckWithDificillity[1][i]["src"]);
+    }
+  }
+  while (blueCardsArr.length < blueCardsValue) {
+    const i = Math.floor(Math.random() * deckWithDificillity[2].length);
+    if (!blueCardsArr.includes(deckWithDificillity[2][i]["src"])) {
+      blueCardsArr.push(deckWithDificillity[2][i]["src"]);
+    }
+  }
+  return [greenCardsArr, brownCardsArr, blueCardsArr];
+};
+
+const gameStarting = () => {
+  hiddenGameOptions();
+  let allCards = shuffleCards(ancient.stage);
+  let stageSortedUrl = createAllStagesUrls(ancient.stage, allCards);
+  updateCardsLeftBlock(stageSortedUrl);
+  cardDeckHolder.addEventListener("click", showCards(stageSortedUrl));
+};
+
+const createDecksWithDificility = (greenVal, brownVal, blueVal) => {
+  const greenArrEasyCards = [],
+    greenArrMediumCards = [],
+    greenArrHardCards = [],
+    brownArrEasyCards = [],
+    brownArrMediumCards = [],
+    brownArrHardCards = [],
+    blueArrEasyCards = [],
+    blueArrMediumCards = [],
+    blueArrHardCards = [];
+
+  greenCards.forEach((item) => {
+    if (item.difficulty === "easy") {
+      greenArrEasyCards.push(item);
+    } else if (item.difficulty === "normal") {
+      greenArrMediumCards.push(item);
+    } else {
+      greenArrHardCards.push(item);
+    }
+  });
+
+  brownCards.forEach((item) => {
+    if (item.difficulty === "easy") {
+      brownArrEasyCards.push(item);
+    } else if (item.difficulty === "normal") {
+      brownArrMediumCards.push(item);
+    } else {
+      brownArrHardCards.push(item);
+    }
+  });
+
+  blueCards.forEach((item) => {
+    if (item.difficulty === "easy") {
+      blueArrEasyCards.push(item);
+    } else if (item.difficulty === "normal") {
+      blueArrMediumCards.push(item);
+    } else {
+      blueArrHardCards.push(item);
+    }
+  });
+
+  switch (gameMode) {
+    case "easiest":
+      if (greenArrEasyCards.length < greenVal) {
+        addRandomValueToArr(greenArrEasyCards, greenArrMediumCards, greenVal);
+      } else if (brownArrEasyCards.length < brownVal) {
+        addRandomValueToArr(brownArrEasyCards, brownArrMediumCards, brownVal);
+      } else if (blueArrEasyCards.length < blueVal) {
+        addRandomValueToArr(blueArrEasyCards, blueArrMediumCards, blueVal);
+      }
+      return [greenArrEasyCards, brownArrEasyCards, blueArrEasyCards];
+    case "easy":
+      const easyGreenArr = greenArrMediumCards.concat(greenArrEasyCards),
+        easyBrownArr = brownArrMediumCards.concat(brownArrEasyCards),
+        easyBlueArr = blueArrMediumCards.concat(blueArrEasyCards);
+      return [easyGreenArr, easyBrownArr, easyBlueArr];
+    case "hard":
+      const hardGreenArr = greenArrHardCards.concat(greenArrMediumCards),
+        hardBrownArr = brownArrHardCards.concat(brownArrMediumCards),
+        hardBlueArr = blueArrHardCards.concat(blueArrMediumCards);
+      return [hardGreenArr, hardBrownArr, hardBlueArr];
+    case "hardest":
+      if (greenArrHardCards.length < greenVal) {
+        addRandomValueToArr(greenArrHardCards, greenArrMediumCards, greenVal);
+      } else if (brownArrHardCards.length < brownVal) {
+        addRandomValueToArr(brownArrHardCards, brownArrMediumCards, brownVal);
+      } else if (blueArrHardCards.length < blueVal) {
+        addRandomValueToArr(blueArrHardCards, blueArrMediumCards, blueVal);
+      }
+      return [greenArrHardCards, brownArrHardCards, blueArrHardCards];
+    default:
+      return [greenCards, brownCards, blueCards];
+  }
+};
+
+const addRandomValueToArr = (sourceArr, arr, index) => {
+  while (sourceArr.length < index) {
+    const num = Math.floor(Math.random() * arr.length);
+    sourceArr.push(arr[num]);
+  }
+};
+
+const showCards = (urls = []) => {
+  return (event) => {
+    event.preventDefault();
+    try {
+      findCard(urls);
+      updateCardsLeftBlock(urls);
+    } catch (error) {}
+  };
+};
+
+const findCard = (arr) => {
+  let card = false;
+  if (!card) {
+    for (let i = 0; i < 3; i++) {
+      if (!card) {
+        for (let j = 0; j < 3; j++) {
+          if (!card) {
+            if (arr[i][j][0].length != 0) {
+              card = arr[i][j][0].splice(0, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+  setCardOnTable(card, arr);
+
+  if (arr[2][1][0].length === 0 && arr[2][2][0].length === 0) {
+    gameOnGoing = false;
+  }
+};
+
+const setCardOnTable = (url, arr) => {
+  if (gameOnGoing === false) {
+    alert("Колода закончилась!");
+    delete arr[0];
+    delete arr[1];
+    delete arr[2];
+    cardDeckHolder.removeEventListener("click", showCards());
+
+    cardShowing.style.background = "transparent";
+  } else {
+    const image = new Image();
+    image.src = url;
+    image.onload = () => {
+      cardShowing.style.background = `url(${url}) no-repeat center`;
+    };
+  }
+};
+
+const updateCardsLeftBlock = (arr) => {
+  const firstStageGreenCardValue = arr[0][0][0].length,
+    secondStageGreenCardValue = arr[1][0][0].length,
+    thirdStageGreenCardValue = arr[2][0][0].length,
+    firstStageBrownCardValue = arr[0][1][0].length,
+    secondStageBrownCardValue = arr[1][1][0].length,
+    trirdStageBrownCardValue = arr[2][1][0].length,
+    firstStageBlueCardValue = arr[0][2][0].length,
+    secondStageBlueCardValue = arr[1][2][0].length,
+    thirdStageBlueCardValue = arr[2][2][0].length;
+
+  stageOneBlock.querySelector(".green").textContent = firstStageGreenCardValue;
+  stageOneBlock.querySelector(".brown").textContent = firstStageBrownCardValue;
+  stageOneBlock.querySelector(".blue").textContent = firstStageBlueCardValue;
+  stageTwoBlock.querySelector(".green").textContent = secondStageGreenCardValue;
+  stageTwoBlock.querySelector(".brown").textContent = secondStageBrownCardValue;
+  stageTwoBlock.querySelector(".blue").textContent = secondStageBlueCardValue;
+  stageThreeBlock.querySelector(".green").textContent =
+    thirdStageGreenCardValue;
+  stageThreeBlock.querySelector(".brown").textContent =
+    trirdStageBrownCardValue;
+  stageThreeBlock.querySelector(".blue").textContent = thirdStageBlueCardValue;
+};
+
+const createAllStagesUrls = (arr, url) => {
+  const firstStage = arr[0],
+    secondStage = arr[1],
+    thirdStage = arr[2],
+    stageOneUrl = [],
+    stageTwoUrl = [],
+    stageThreeUrl = [];
+
+  stageOneUrl.push([url[0].splice(0, firstStage[0])]);
+  stageOneUrl.push([url[1].splice(0, firstStage[1])]);
+  stageOneUrl.push([url[2].splice(0, firstStage[2])]);
+  stageTwoUrl.push([url[0].splice(0, secondStage[0])]);
+  stageTwoUrl.push([url[1].splice(0, secondStage[1])]);
+  stageTwoUrl.push([url[2].splice(0, secondStage[2])]);
+  stageThreeUrl.push([url[0].splice(0, thirdStage[0])]);
+  stageThreeUrl.push([url[1].splice(0, thirdStage[1])]);
+  stageThreeUrl.push([url[2].splice(0, thirdStage[2])]);
+
+  return [stageOneUrl, stageTwoUrl, stageThreeUrl];
+};
+
+const hiddenGameOptions = () => {
+  gameModeSelect.classList.remove("_active");
+  gameStart.classList.remove("_active");
+  stageContainer.classList.add("_active");
+  cardDeckHolder.classList.add("_active");
+  cardShowing.classList.add("_active");
+  gameEnd.classList.add("_active");
+  gameOnGoing = true;
+};
+
+const showGameOptions = () => {
+  gameModeSelect.classList.add("_active");
+  gameEnd.classList.remove("_active");
+  stageContainer.classList.remove("_active");
+  cardDeckHolder.classList.remove("_active");
+  cardShowing.classList.remove("_active");
+  gameOnGoing = false;
+};
+
+gameStart.addEventListener("click", gameStarting);
+gameEnd.addEventListener("click", showGameOptions);

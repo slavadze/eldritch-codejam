@@ -1,48 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="script.js"></script>
-    <title>Codejam</title>
-</head>
-<body>
-    <div class="wrapper">
-        <div class="ancients-container">    
-            <div class="ancient-card " style="background-image: url(assets/Ancients/Azathoth.png);">
-                <input id="radio-1" class="input_field ancient" type="radio" name="anc" value="1" checked>
-            </div>
-            <div class="ancient-card " style="background-image: url(assets/Ancients/Cthulthu.png);">
-                <input id="radio-2" class="input_field ancient" type="radio" name="anc" value="2">
-            </div>
-            <div class="ancient-card " style="background-image: url(assets/Ancients/IogSothoth.png);">
-                <input id="radio-3" class="input_field ancient" type="radio" name="anc" value="3">
-            </div>
-            <div class="ancient-card " style="background-image: url(assets/Ancients/ShubNiggurath.png);">
-                <input id="radio-4" class="input_field ancient" type="radio" name="anc" value="4"></div>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js" defer></script>
+    <title>CodeJam</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="old-choose">
+        <p class="title">Выбери древнего</p>
+        <select name="old" id="old" class="select-old">
+          <option disabled selected value>-- Список древних --</option>
+          <option value="azzayhoth">Азатот</option>
+          <option value="cthulhu">Ктулху</option>
+          <option value="solthoth">Йог-Сотот</option>
+          <option value="shubNiggurath">Шуб Ниггурат</option>
+        </select>
+        <div class="old-card"></div>
+      </div>
+      <div class="stage-container">
+        <div class="stage-info stage-one">
+          <div class="stage-name">Первая стадия</div>
+          <div class="dots-container">
+            <div class="dot green"></div>
+            <div class="dot brown"></div>
+            <div class="dot blue"></div>
+          </div>
         </div>
-        <div class="difficulty-container">
-            <div class="difficulty">Очень легкий
-                <input id="radio-5" class="input_field difficulty" type="radio" name="dif" value="5" checked>
-            </div>
-            <div class="difficulty">Легкий уровень
-                <input id="radio-6" class="input_field difficulty" type="radio" name="dif" value="6">
-            </div>
-            <div class="difficulty">Средний уровень
-                <input id="radio-7" class="input_field difficulty" type="radio" name="dif" value="7">
-            </div>
-            <div class="difficulty">Сложный уровень
-                <input id="radio-8" class="input_field difficulty" type="radio" name="dif" value="8">
-            </div>
-            <div class="difficulty">Очень сложный
-                <input id="radio-9" class="input_field difficulty" type="radio" name="dif" value="9">
-            </div>
+        <div class="stage-info stage-two">
+          <div class="stage-name">Вторая стадия</div>
+          <div class="dots-container">
+            <div class="dot green"></div>
+            <div class="dot brown"></div>
+            <div class="dot blue"></div>
+          </div>
         </div>
-        <div class="deck-container">
-            <span class="shuffle-button">Замешать колоду</span>
+        <div class="stage-info stage-three">
+          <div class="stage-name">Третья стадия</div>
+          <div class="dots-container">
+            <div class="dot green"></div>
+            <div class="dot brown"></div>
+            <div class="dot blue"></div>
+          </div>
         </div>
+      </div>
+      <div class="game-mode">
+        <div class="mode easiest">Очень легкий</div>
+        <div class="mode easy">Легкий уровень</div>
+        <div class="mode normal">Средний уровень</div>
+        <div class="mode hard">Сложный уровень</div>
+        <div class="mode hardest">Очень сложный</div>
+      </div>
+      <div class="active-card-block"></div>
+      <div class="card-deck-holder"></div>
+      <div class="game">
+        <div class="game-start">Замешать колоду</div>
+        <div class="game-end">Закончить раздачу</div>
+      </div>
     </div>
-</body>
+    <!--<script type="module" src="script.js"></script>-->
+  </body>
 </html>
